@@ -12,6 +12,7 @@ class Limousine extends Vehicle
         $this->HasMinibar = $hasMinibar;
     }
 
+    // Price function.
     public function Price(bool $distance)
     {
         if ($this->HasMinibar == true) {

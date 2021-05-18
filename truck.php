@@ -12,6 +12,7 @@ class Truck extends Vehicle
         $this->HasTowRope = $hasTowRope;
     }
 
+    // Price function.
     public function Price(bool $distance)
     {
         if ($this->HasTowRope == true) {

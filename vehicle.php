@@ -39,7 +39,8 @@ class Vehicle
             $this->IsAvailable = true;
             $this->NeedsCleaning = $needsCleaning;
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned. " .
-                (boolval($needsCleaning) ? 'Needs cleaning. ' : 'Doesn\'t need cleaning.') . " The price is €"  .  $vehicle->Price($distance);
+                " | " . (boolval($needsCleaning) ? 'Needs cleaning.' : 'Doesn\'t need cleaning.') . 
+                " | The price is "  . $vehicle->Price($distance);
         } else {
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is already returned.";
         }

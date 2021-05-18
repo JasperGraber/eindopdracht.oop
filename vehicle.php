@@ -32,13 +32,23 @@ class Vehicle
         return $this->Brand . " " . $this->Model . ", " . $this->LicensePlate;
     }
 
-    // Update availability function.
-    public function UpdateAvailability() {
+    // Return vehicle function.
+    public function ReturnVehicle() {
         if ($this->IsAvailable == false) {
-            // $this->__construct();
+            $this->IsAvailable = true;
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned.";
         } else {
             return "<br> Vehicle <span style='font-style:italic;'>\"". $this->GetName() . "\"</span> is already returned.";
+        }
+    }
+
+    // Rent vehicle function.
+    public function RentVehicle() {
+        if ($this->IsAvailable == true) {
+            $this->IsAvailable = false;
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is rented.";
+        } else {
+            return "<br> Vehicle <span style='font-style:italic;'>\"". $this->GetName() . "\"</span> is already rented.";
         }
     }
 
@@ -52,7 +62,7 @@ class Vehicle
             "<br> BuildYear: " . $this->BuildYear .
             "<br> LicensePlate: " . $this->LicensePlate .
             "<br> NeedsCleaning: " . (boolval($this->NeedsCleaning) ? 'yes' : 'no') .
-            "<br> Milage: " . $this->Milage .
+            "<br> Milage: " . $this->Milage . " km" .
             "<br> IsAvailable: " . (boolval($this->IsAvailable) ? 'yes' : 'no');
     }
 }

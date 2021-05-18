@@ -21,13 +21,12 @@ class Administration
     // Return vehicle function.
     public function ReturnVehicle($vehicle)
     {
-        echo $vehicle->UpdateAvailability();
+        echo $vehicle->ReturnVehicle();
     }
 
     // Index vehicle function.
     public function IndexVehicle()
     {
-        echo "<br><span style='font-weight:bold;'>All vehicles</span>";
         $i = 1;
         foreach ($this->Vehicles as $vehicle) {
             echo "<br> (" . $i . ") " . $vehicle->GetName();
@@ -36,7 +35,8 @@ class Administration
     }
 
     // Rent vehicle function.
-    public function RentVehicle()
+    public function RentVehicle($vehicle)
     {
+        echo $vehicle->RentVehicle();
     }
 }

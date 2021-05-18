@@ -33,24 +33,26 @@ class Vehicle
     }
 
     // Return vehicle function.
-    public function ReturnVehicle($needsCleaning) {
+    public function ReturnVehicle($vehicle, $needsCleaning, $distance)
+    {
         if ($this->IsAvailable == false) {
             $this->IsAvailable = true;
             $this->NeedsCleaning = $needsCleaning;
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned. " .
-           (boolval($needsCleaning) ? 'Needs cleaning' : 'Doesn\'t need cleaning');
+                (boolval($needsCleaning) ? 'Needs cleaning.' : 'Doesn\'t need cleaning.') . " The price is ";
         } else {
-            return "<br> Vehicle <span style='font-style:italic;'>\"". $this->GetName() . "\"</span> is already returned.";
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is already returned.";
         }
     }
 
     // Rent vehicle function.
-    public function RentVehicle() {
+    public function RentVehicle()
+    {
         if ($this->IsAvailable == true) {
             $this->IsAvailable = false;
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is rented.";
         } else {
-            return "<br> Vehicle <span style='font-style:italic;'>\"". $this->GetName() . "\"</span> is already rented.";
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is already rented.";
         }
     }
 

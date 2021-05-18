@@ -33,10 +33,12 @@ class Vehicle
     }
 
     // Return vehicle function.
-    public function ReturnVehicle() {
+    public function ReturnVehicle($needsCleaning) {
         if ($this->IsAvailable == false) {
             $this->IsAvailable = true;
-            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned.";
+            $this->NeedsCleaning = $needsCleaning;
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned. " .
+           (boolval($needsCleaning) ? 'Needs cleaning' : 'Doesn\'t need cleaning');
         } else {
             return "<br> Vehicle <span style='font-style:italic;'>\"". $this->GetName() . "\"</span> is already returned.";
         }

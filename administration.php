@@ -19,9 +19,9 @@ class Administration
     }
 
     // Return vehicle function.
-    public function ReturnVehicle($vehicle)
+    public function ReturnVehicle($vehicle, $needsCleaning)
     {
-        echo $vehicle->ReturnVehicle();
+        echo $vehicle->ReturnVehicle($needsCleaning);
     }
 
     // Index vehicle function.

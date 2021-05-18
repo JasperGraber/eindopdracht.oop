@@ -14,7 +14,12 @@ class Limousine extends Vehicle
 
     public function Price(bool $distance)
     {
-        return get_class($this);
+        if ($this->HasMinibar == true) {
+            $price = 450 + $distance * 3 + 65;
+        } else {
+            $price = 450 + $distance * 3;
+        }
+        return $price;   
     }
 
     // String function.

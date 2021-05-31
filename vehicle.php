@@ -38,9 +38,11 @@ class Vehicle
         if ($this->IsAvailable == false) {
             $this->IsAvailable = true;
             $this->NeedsCleaning = $needsCleaning;
+            $this->Milage = $this->Milage + $distance;
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is returned. " .
                 " | " . (boolval($needsCleaning) ? 'Needs cleaning.' : 'Doesn\'t need cleaning.') . 
-                " | The price is "  . $vehicle->Price($distance);
+                " | The price is "  . $vehicle->Price($distance) . 
+                " | The total distance is " . $this->Milage . "km";
         } else {
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is already returned.";
         }

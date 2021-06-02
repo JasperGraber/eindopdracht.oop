@@ -10,12 +10,12 @@ class Administration
     // Add vehicle function.
     public function AddVehicle($vehicle)
     {
-        // if ($vehicle->GetLicensePlate()) {
-        array_push($this->Vehicles, $vehicle);
-        return "<br> Vehicle <span style='font-style:italic;'>\"" . $vehicle->GetName() . "\"</span> is added to the system.";
-        // } else {
-        //     return "<br> Vehicle \"" . $vehicle->GetLicensePlate() . "\" already exists in the system.";
-        // }
+        if ($this->FindVehicle($vehicle->GetLicensePlate()) == true) {
+            array_push($this->Vehicles, $vehicle);
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $vehicle->GetName() . "\"</span> is added to the system.";
+        } else {
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $vehicle->GetName() . "\"</span> already exists in the system.";
+        }
     }
 
     // Return vehicle function.
@@ -30,7 +30,7 @@ class Administration
         $i = 1;
         foreach ($this->Vehicles as $vehicle) {
             echo "<br> (" . $i . ") " . $vehicle->GetName()
-            // . "<br>" . $vehicle->__toString()
+                // . "<br>" . $vehicle->__toString()
             ;
             $i++;
         }
@@ -40,5 +40,16 @@ class Administration
     public function RentVehicle($vehicle)
     {
         echo $vehicle->RentVehicle();
+    }
+
+    // Find vewhicle function.
+    public function FindVehicle($licensePlate)
+    {
+        foreach ($this->Vehicles as $vehicle) {
+            if ($licensePlate == $vehicle->GetLicensePlate()) {
+                return false;
+            }
+        }
+        return true;
     }
 }

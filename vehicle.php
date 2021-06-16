@@ -59,7 +59,7 @@ class Vehicle
     {
         if ($this->IsAvailable == true) {
             $this->IsAvailable = false;
-            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is rented.";
+            return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is now rented.";
         } else {
             return "<br> Vehicle <span style='font-style:italic;'>\"" . $this->GetName() . "\"</span> is already rented.";
         }

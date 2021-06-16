@@ -13,14 +13,14 @@ class Truck extends Vehicle
     }
 
     // Price function.
-    public function Price(bool $distance)
+    public function Price(float $distance)
     {
         if ($this->HasTowRope == true) {
             $price = 950 + $distance * 0.15 + 50;
         } else {
             $price = 950 + $distance * 0.15;
         }
-        return $price;   
+        return round($price,2);      
     }
 
     // String function.

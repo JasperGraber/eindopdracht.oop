@@ -13,14 +13,14 @@ class Limousine extends Vehicle
     }
 
     // Price function.
-    public function Price(bool $distance)
+    public function Price(float $distance)
     {
         if ($this->HasMinibar == true) {
             $price = 450 + $distance * 3 + 65;
         } else {
             $price = 450 + $distance * 3;
         }
-        return $price;   
+        return round($price,2);   
     }
 
     // String function.

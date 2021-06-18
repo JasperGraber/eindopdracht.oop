@@ -21,7 +21,7 @@ class Administration
     // Return vehicle function.
     public function ReturnVehicle($vehicle, $needsCleaning, $distance)
     {
-        echo $vehicle->ReturnVehicle($vehicle, $needsCleaning, $distance);
+        return $vehicle->ReturnVehicle($vehicle, $needsCleaning, $distance);
     }
 
     // Index vehicle function.
@@ -29,9 +29,7 @@ class Administration
     {
         $i = 1;
         foreach ($this->Vehicles as $vehicle) {
-            echo "<br> (" . $i . ") " . $vehicle->GetName()
-                // . "<br>" . $vehicle->__toString()
-            ;
+            return "<br> (" . $i . ") " . $vehicle->GetName();
             $i++;
         }
     }
@@ -39,7 +37,7 @@ class Administration
     // Rent vehicle function.
     public function RentVehicle($vehicle)
     {
-        echo $vehicle->RentVehicle();
+        return $vehicle->RentVehicle();
     }
 
     // Find vewhicle function.

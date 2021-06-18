@@ -1,4 +1,6 @@
-<a href="./python/main.py"><h1>Python Version</h1></a>
+<a href="./python/main.py">
+    <h1>Python Version</h1>
+</a>
 
 <?php
 

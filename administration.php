@@ -29,7 +29,7 @@ class Administration
     {
         $i = 1;
         foreach ($this->Vehicles as $vehicle) {
-            return "<br> (" . $i . ") " . $vehicle->GetName();
+            echo "<br> (" . $i . ") " . $vehicle->GetName();
             $i++;
         }
     }

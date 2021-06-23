@@ -40,7 +40,7 @@ class Administration
         return $vehicle->RentVehicle();
     }
 
-    // Find vewhicle function.
+    // Find vehicle function.
     public function FindVehicle($licensePlate)
     {
         foreach ($this->Vehicles as $vehicle) {

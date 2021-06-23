@@ -30,6 +30,12 @@ class Vehicle:
         else:
             return "Voertuig is al teruggebracht."
 
+    def GetName(self):
+        return f"{self.brand} {self.model}, {self.licenseplate}."
+    
+    def GetLicensePlate(self):
+        return f"{self.licenseplate}"
+
     # To string function.   
     def __str__(self):
         return f"Merk: {self.brand} \nModel: {self.model} \nBouwjaar: {self.buildyear} \nKenteken: {self.licenseplate} \nSchoon: {self.needscleaning} \nKilometerstand: {self.milage}km \nBeschikbaar: {self.isavailable}"
